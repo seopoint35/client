@@ -15,7 +15,6 @@ font-size: 62.5%
 
 
 body{
-background-color: var(--bg-color);
 font-family: Raleway;
 }
 
@@ -26,6 +25,7 @@ font-family: Raleway;
  display: flex;
  justify-content: center;
  align-items: center;
+ background-color: var(--bg-color);
 }
 
 .innerContainer{
