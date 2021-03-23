@@ -1,0 +1,153 @@
+
+
+
+footer{
+    width: 100%;
+    height: 20rem;
+    border: 0.1rem solid  #121212;
+    background-color: #121212;
+    margin-bottom: 1rem;
+}
+
+.footerContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 2rem;
+}
+
+.copyright{
+    width: 35rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.imageCenter{
+    width: 50%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footerLogo{
+    width: 60%;
+    height: 7rem;
+   
+}
+
+
+.footerLogo img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.CopyWrightName{
+    color: gray;
+}
+
+.Footer-Section{
+    width: 30rem;
+    height: 100%;
+}
+
+.Footer-section-Title{
+    color: #fff;
+    position: relative;
+}
+
+.Footer-section-Title h2::after{
+    content: ' ';
+    width: 4.5rem;
+    height: 0.3rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    position: absolute;
+    top: 2rem;
+    left: 0rem;
+
+}
+
+.List-of-section{
+    margin-top: 1.5rem;
+}
+.List-of-section p{
+    margin-top: 1rem;
+    color: gray;
+    cursor: pointer;
+}
+
+.List-of-section p:hover{
+    transition: 0.1s linear;
+    color: #fff;;
+ 
+}
+
+
+.Footer-SocialsIcons{
+    display: flex;
+    margin-top: 2rem;
+    height: 5rem;
+    align-items: center;
+}
+
+.Footer-IconBox{
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+/* Mobile-Footer */
+
+.Mobile-Footer{
+    display: none;
+}
+
+@media screen and (max-width: 580px){
+    footer{
+    display: none;
+    }
+    
+    .Mobile-Footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+    width: 100%;
+    height: 5rem;
+    position: fixed;
+    bottom: 0rem;
+    left: 0rem;
+    border: 0.1rem solid gainsboro;
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 1px 1px 9px 0px rgba(204, 201, 201, 0.96);
+    }
+
+    .MobileFooterIconBox{
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: gray;
+    cursor: pointer;
+        
+    }
+
+    .plus{
+    height: 4rem ;
+    width: 4rem;
+    border: 0.1rem solid rgb(248, 105, 105);
+    border-radius: 50%;
+    }
+}

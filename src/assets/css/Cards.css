@@ -2,7 +2,7 @@
 
 .Card-Container{
 width: 80%;
-height: 32rem;
+height: 38rem;
 padding: 1rem;
 margin-bottom: 5rem;
 box-shadow: 6px 10px 17px 10px rgba(204,176,176,0.19);
@@ -58,6 +58,54 @@ cursor: pointer;
 }
 
 .card-like{
+color: rgb(114, 100, 100);
+}
+
+.card-like:hover{
 color: rgb(255, 0, 0);
 }
 
+.LikesCount{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.viewAllComments{
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+}
+
+.addComent{
+    display: flex;
+    font-size: 1.4rem;
+    align-items: center;
+    cursor: pointer;
+    font-size: 100;
+}
+
+.userPic{
+    width: 3rem;
+    height: 3rem;
+    border: 0.1rem solid gray;
+    border-radius: 50%;
+    margin-right: 1rem;
+    padding: 0.1rem; 
+}
+
+.userPic img{
+   width: 100%;
+   height: 100%;
+   border-radius: 50%;
+}
+
+
+
+@media screen and (max-width: 580px) {
+
+    .Card-Container{
+        width: 35rem;
+        padding: 1rem;
+    }
+
+}

@@ -2,34 +2,64 @@
 
 
 .Main-Conatiner{
-    border: 0.1rem solid red;
     width: 100%;
     min-height: 50rem;
     margin-top: 10rem;
+    margin-bottom: 10rem;
     display: flex;
     padding: 0rem 2rem;
     font-size: 1.6rem;
+    border: 0.1rem solid gainsboro;
 }
 
 .Left-part{
-    width: 30rem;
-    border: 0.1rem solid black;
+width: 30rem;   
 }
 
 .center-part{
-    width: 60rem;
-    border: 0.1rem solid black;
+width: 60rem;
 }
 
 .Right-part{
-    width: 40rem;
-    border: 0.1rem solid black;
+width: 40rem;
+
 }
 
 
 .Center-Container{
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+padding: 3rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+
+@media screen and (max-width: 580px) {
+   
+    .Main-Conatiner{
+        width: 100%;
+        min-height: 50rem;
+        margin-top: 6rem;
+        display: flex;
+        font-size: 1.6rem;
+        padding: 0%;
+    }
+
+    .center-part{
+        width: 100%;
+        padding: 0%;
+    }
+  
+    .Left-part{
+     display: none;
+    }
+
+    
+   .Right-part{
+   display: none;
+   }
+
+  
+
 }

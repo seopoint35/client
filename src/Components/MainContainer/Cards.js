@@ -14,7 +14,7 @@ export default function Cards() {
                </div>
                <div className="Card-Actions">
                   <div className="card-like action ">
-                  <i class="fas fa-heart"></i>
+                  <i class="fas  fa-heart"></i>
                   </div>
 
                   <div className="card-Comment action">
@@ -23,6 +23,20 @@ export default function Cards() {
                   <div className="card-share action">
                   <i class="fas fa-share-square"></i>
                   </div>
+               </div>
+               <div className="LikesCount">
+                  <span>4324 </span> likes
+               </div>
+               <div className="viewAllComments">
+                 <p>view all <span>59</span> comments</p>
+               </div>
+               <div className="addComent">
+                 <div className="userPic">
+                    <img src={CardImage} />
+                 </div>
+                 <div>
+                     Add a Comment...
+                 </div>
                </div>
             </div>
         </>
