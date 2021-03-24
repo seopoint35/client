@@ -11,7 +11,7 @@ export default function NavBar() {
             <div className="NavBarContainer">
 
                 <div className="MobileIcon">
-                <i class="fas fa-bars"></i>
+                <i className="fas fa-bars"></i>
                 </div>
 
                 <div className="LogoBox">
@@ -24,7 +24,7 @@ export default function NavBar() {
 
                 <div className="Notification">
                     <div className="NotificationIcon">
-                        <i class="fas fa-bell"></i>
+                        <i className="fas fa-bell"></i>
                     </div>
                     <div className="LoginButton">
                         <NavLink to="/Login"> Login</NavLink>

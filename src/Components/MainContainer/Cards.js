@@ -14,14 +14,14 @@ export default function Cards() {
                </div>
                <div className="Card-Actions">
                   <div className="card-like action ">
-                  <i class="fas  fa-heart"></i>
+                  <i className="fas  fa-heart"></i>
                   </div>
 
                   <div className="card-Comment action">
-                  <i class="far fa-comment"></i>
+                  <i className="far fa-comment"></i>
                   </div>
                   <div className="card-share action">
-                  <i class="fas fa-share-square"></i>
+                  <i className="fas fa-share-square"></i>
                   </div>
                </div>
                <div className="LikesCount">

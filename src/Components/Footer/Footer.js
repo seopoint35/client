@@ -61,26 +61,26 @@ export default function Footer() {
                         <div className="Footer-SocialsIcons">
                             {/* icons box start */}
                            <div className="Footer-IconBox">
-                           <i class="fab fa-facebook-square"></i>
+                           <i className="fab fa-facebook-square"></i>
                            </div>
                            {/* icons box End */}
 
                            {/* icons box start */}
                            <div className="Footer-IconBox">
-                           <i class="fab fa-twitter-square"></i>
+                           <i className="fab fa-twitter-square"></i>
                            </div>
                            {/* icons box End */}
 
 
                            {/* icons box start */}
                            <div className="Footer-IconBox">
-                           <i class="fab fa-youtube"></i>
+                           <i className="fab fa-youtube"></i>
                            </div>
                            {/* icons box End */}
 
                            {/* icons box start */}
                            <div className="Footer-IconBox">
-                           <i class="fab fa-instagram"></i>
+                           <i className="fab fa-instagram"></i>
                            </div>
                            {/* icons box End */}
 
@@ -98,23 +98,23 @@ export default function Footer() {
             <div className="Mobile-Footer">
                  
                  <div className="MobileFooterIconBox">
-                 <i class="fas fa-home"></i>
+                 <i className="fas fa-home"></i>
                  </div>
 
                  <div className="MobileFooterIconBox">
-                 <i class="fas fa-search"></i>
+                 <i className="fas fa-search"></i>
                  </div>
 
                  <div className="MobileFooterIconBox plus">
-                 <i class="fas fa-plus"></i>
+                 <i className="fas fa-plus"></i>
                  </div>
 
                  <div className="MobileFooterIconBox">
-                 <i class="fas fa-bell"></i>
+                 <i className="fas fa-bell"></i>
                  </div>
 
                  <div className="MobileFooterIconBox">
-                 <i class="fas fa-user-circle"></i>
+                 <i className="fas fa-user-circle"></i>
                  </div>
             </div>
         </>
