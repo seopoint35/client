@@ -6,8 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LoginUser } from '../../Store/Actions/AuthActions';
 
 export default function Login() {
+
     const dispatch = useDispatch();
-    const { loading, LoginError } = useSelector((state) => {
+    const { loading, LoginError ,userDetails } = useSelector((state) => {
         return state.AuthReducer
     })
     const [UserLogin, setUserLogin] = useState({
@@ -25,7 +26,6 @@ export default function Login() {
 
     const handelSubmit = async (e) => {
         e.preventDefault();
-
         dispatch(LoginUser(UserLogin))
     }
 
@@ -35,7 +35,8 @@ export default function Login() {
             toast.error(LoginError);
         }
 
-    }, [LoginError])
+
+    }, [LoginError , userDetails])
 
     return (
         <>

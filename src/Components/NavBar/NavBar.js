@@ -2,10 +2,16 @@ import React from 'react';
 import '../../assets/css/NavBar.css';
 import Logo from '../../assets/images/logo.png';
 import { NavLink } from "react-router-dom";
-
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function NavBar() {
+    const { loading, LoginError ,userDetails } = useSelector((state) => {
+        return state.AuthReducer
+    })
+
+
+
     return (
         <>
             <div className="NavBarContainer">
@@ -27,7 +33,8 @@ export default function NavBar() {
                         <i className="fas fa-bell"></i>
                     </div>
                     <div className="LoginButton">
-                        <NavLink to="/Login"> Login</NavLink>
+                        {userDetails.role ?   <NavLink to="/Login"> Logout</NavLink> :   <NavLink to="/Login"> Login</NavLink>}
+                      
                     </div>
                 </div>
 
