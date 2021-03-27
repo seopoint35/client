@@ -26,7 +26,6 @@ export default function MainConatiner() {
                     <AdminLeftPart />
                 </div>
 
-
                 <div className="Admin-CenterPart">
                     <h1>Center Part</h1>
                 </div>

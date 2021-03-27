@@ -1,4 +1,4 @@
-import {OPEN_LOADING , CLOSE_LOADING , LOGIN_ERROR, USER_DETAILS} from '../Types/AuthTypes';
+import {OPEN_LOADING , CLOSE_LOADING , LOGIN_ERROR, USER_DETAILS , LOG_OUT , SET_TOKEN} from '../Types/AuthTypes';
 
 const initalState = {
     loading: false,
@@ -7,18 +7,28 @@ const initalState = {
         firstName: "",
         lastName: "",
         role: ""
-    }
+    },
+    token:""
 
 }
 
 
 const userDetail = JSON.parse(localStorage.getItem('userDetails'))
 
+const token = localStorage.getItem('jwt')
+
+if(token){
+    initalState.token = token
+}
+
 if (userDetail) {
     initalState.userDetails.firstName = userDetail.firstName;
     initalState.userDetails.lastName = userDetail.lastName;
     initalState.userDetails.role = userDetail.role;
 }
+
+
+
 
 
 const AuthReducer = (state = initalState, action) => {
@@ -44,6 +54,18 @@ const AuthReducer = (state = initalState, action) => {
         return {
             ...state,
             userDetails: action.payload
+        }
+    }else if(action.type === LOG_OUT){
+
+        return {
+            ...state,
+            userDetails: " ",
+            token: ""
+        }
+    }else if(action.type === SET_TOKEN){
+        return {
+            ...state,
+            token: action.payload
         }
     }
 

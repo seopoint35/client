@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {OPEN_LOADING , CLOSE_LOADING , LOGIN_ERROR, USER_DETAILS} from '../Types/AuthTypes';
+import {OPEN_LOADING , CLOSE_LOADING , LOGIN_ERROR, USER_DETAILS , SET_TOKEN} from '../Types/AuthTypes';
 
 
 
@@ -20,6 +20,7 @@ const LoginUser = (UserLogin) => {
         localStorage.setItem('jwt', response.data.token)
         localStorage.setItem('userDetails',JSON.stringify(response.data.userDetails))
         dispatch({ type: USER_DETAILS, payload: response.data.userDetails })
+        dispatch({ type: SET_TOKEN, payload: response.data.token })
     } catch (error) {
         dispatch({ type: CLOSE_LOADING })
 

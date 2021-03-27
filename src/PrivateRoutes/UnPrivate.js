@@ -6,15 +6,16 @@ const UnPrivate = ({ component: Component, ...rest }) => {
     const { userDetails } = useSelector((state) => {
         return state.AuthReducer
     })
+
+    const user = userDetails.role
     return (
         <Route
             {...rest}
             render={
                 () => {
 
-                    if (userDetails.role.includes("user")) {
-
-                        return <Redirect to={'/admin-dashboard'} />
+                    if (userDetails.role == "user" ) {
+                        return <Redirect to={'/admin-dashboard/create-post'} />
                     } else {
 
                         return <Component />

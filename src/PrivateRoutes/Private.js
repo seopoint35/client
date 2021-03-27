@@ -8,13 +8,15 @@ const Private = ({ component: Component, ...rest }) => {
     const { userDetails } = useSelector((state) => {
         return state.AuthReducer
     })
+
+    const user = userDetails.role
     return (
         <Route
             {...rest}
             render={
                 () => {
 
-                    if (userDetails.role.includes("user")) {
+                    if (userDetails.role == "user") {
                         return <Component />
                     } else {
                         return <Redirect to={'/Login'} />

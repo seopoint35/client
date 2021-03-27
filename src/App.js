@@ -5,6 +5,7 @@ import CreatePostPage from "./AdminComponents/CreatePost/CreatePostPage";
 import MainConatiner from "./AdminComponents/AdminContainer/MainConatiner";
 import Private from './PrivateRoutes/Private';
 import UnPrivate from './PrivateRoutes/UnPrivate';
+import PageNotFount from "./Components/PageNotFount/PageNotFount";
 
 
 function App() {
@@ -14,8 +15,9 @@ function App() {
       <Switch> 
         <Route exact path="/" component={Home} />
         <UnPrivate exact path="/Login" component={Login} />
-        <Private exact path="/admin-dashboard" component={MainConatiner} />
-        <Route exact path="/admin-dashboard/create-post" component={CreatePostPage} />
+        <Route exact path="/admin-dashboard" component={MainConatiner} />
+        <Private exact path="/admin-dashboard/create-post" component={CreatePostPage} />
+        <Route component={PageNotFount} />
         </Switch>
       </BrowserRouter>
 
