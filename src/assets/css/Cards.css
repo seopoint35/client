@@ -57,12 +57,11 @@ font-size: 2rem;
 cursor: pointer;
 }
 
-.card-like{
-color: rgb(114, 100, 100);
-}
 
-.card-like:hover{
+
+.Fill_Heart{
 color: rgb(255, 0, 0);
+
 }
 
 .LikesCount{

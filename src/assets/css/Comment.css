@@ -1,0 +1,163 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 580px){
+    
+    .Comment-NavBar{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: fixed;
+        top: 0%;
+        height: 5rem;
+        background-color: #fff;
+        z-index: 2;
+        box-shadow: 1px 5px 23px 0px rgba(225,218,218,1);
+        -webkit-box-shadow: 1px 5px 23px 0px rgba(225,218,218,1);
+        -moz-box-shadow: 1px 5px 23px 0px rgba(225,218,218,1);
+    }
+
+    .Comment_Back_Arrow{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        height: 100%;
+        width: 5rem;
+        font-size: 2rem;
+        color: #111;
+    }
+    .Cooment_NavTitle{
+        display: flex;
+        align-items: center; 
+        height: 100%;
+        width: 10rem;
+        color: #111;
+        flex: 1;
+
+    }
+
+    .comment_Share_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 100%;
+    font-size: 2rem;
+    }
+
+    .Comment_Container{
+     margin-top: 6rem;
+     width: 100%;
+     min-height: 30rem;
+     padding: 1rem;
+     margin-bottom: 4rem;
+    }
+    .Comment_List_Box{
+      display: flex;
+      width: 100%;
+      min-height: 5rem;
+      margin-bottom: 1rem; 
+    }
+
+    .Comment_user_Image{
+        width: 4.5rem;
+        height: 4.5rem;
+        border: 0.2rem solid orangered;
+        border-radius: 50%;
+        padding: 0.2rem;
+    }
+    .Comment_user_Image img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 0.1rem solid black;
+    }
+    .Comment_Contents{
+        width: 25rem;
+        min-height: 4.3rem;
+        margin-left: 0.3rem;
+        padding: 0.3rem;
+    }
+    .Comment_Contents h2{
+       font-size: 1.6rem;
+       font-weight: bold;
+    }
+    .Comment_Contents p{
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: gray;
+     }
+
+     .User_Cooment_Like{
+         width: 3.5rem;
+         display: flex;
+         justify-content: center;
+         height: 3rem;
+         align-items: center;
+         color: red;
+     }
+
+     .Comment_Post_Input{
+         display: flex;
+         margin-top: 2rem;
+         width: 100%;
+         height: 4rem;
+         position: fixed;
+         bottom: 0%;
+         background-color: #fff;
+         box-shadow: 1px 5px 23px 0px rgba(225,218,218,1);
+        -webkit-box-shadow: 1px 5px 23px 0px rgba(225,218,218,1);
+        -moz-box-shadow: 1px 5px 23px 0px rgba(225,218,218,1);
+
+     }
+     .Comment_PostInput_user{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 5rem;
+         font-size: 3rem;
+     }
+
+     .Comment_postFormBox{
+         display: flex;
+         align-items: center;
+         width: 25rem;
+     }
+
+     .Comment_postFormBox input[type="text"]{
+        width: 25rem;
+        height: 3.5rem;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+
+     .CoomentPost_btnBox{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 5rem;
+    
+     }
+
+     
+     .CoomentPost_btnBox button{
+       background-color: transparent;
+       outline: none;
+       border: none;
+       font-size: 1.5rem;
+       color: turquoise;
+    }
+}

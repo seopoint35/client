@@ -83,8 +83,14 @@ export default function CraetePost() {
 
     //useEfect for error or succesMessage
     useEffect(() => {
+        const { VocabName, VocabImage } = postData;
         if (postSucces !== undefined) {
             toast.success(postSucces);
+         setpostData({
+            VocabName: " "
+         })
+
+         setImagePreview(CardImage)
         }
         
          if(postError !== undefined){

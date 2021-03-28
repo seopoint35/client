@@ -1,8 +1,11 @@
-import {OPEN_LOADING , CLOSE_LOADING , POST_ERROR ,POST_SUCCES} from '../Types/PostType';
+import {OPEN_LOADING , CLOSE_LOADING , POST_ERROR ,POST_SUCCES , GET_ALL_POST} from '../Types/PostType';
+
 const initalstate = {
     loading: false,
     postError: "",
-    postSucces: ""
+    postSucces: "",
+    allPosts:[],
+   
 }
 
 const PostReducer = (state = initalstate, action) => {
@@ -28,6 +31,12 @@ const PostReducer = (state = initalstate, action) => {
             ...state,
             postSucces: action.payload
         }
+    }else if(action.type === GET_ALL_POST){
+         return{
+             ...state,
+             allPosts: action.payload
+
+         }
     }
 
     return state

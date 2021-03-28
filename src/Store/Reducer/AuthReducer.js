@@ -6,7 +6,8 @@ const initalState = {
     userDetails: {
         firstName: "",
         lastName: "",
-        role: ""
+        role: "",
+        UserId:""
     },
     token:""
 
@@ -25,6 +26,7 @@ if (userDetail) {
     initalState.userDetails.firstName = userDetail.firstName;
     initalState.userDetails.lastName = userDetail.lastName;
     initalState.userDetails.role = userDetail.role;
+    initalState.userDetails.UserId = userDetail.UserId;
 }
 
 
