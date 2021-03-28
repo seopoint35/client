@@ -1,4 +1,4 @@
-import { OPEN_LOADING, CLOSE_LOADING, POST_ERROR, POST_SUCCES, GET_ALL_POST } from '../Types/PostType';
+import { OPEN_LOADING, CLOSE_LOADING, POST_ERROR, POST_SUCCES, GET_ALL_POST, GET_POST_COMMENTS } from '../Types/PostType';
 import axios from 'axios';
 
 
@@ -16,12 +16,9 @@ const CreatePost = (formData, token) => {
         try {
             const response = await axios.post('/CreatePost', formData, config)
             dispatch({ type: CLOSE_LOADING })
-            
-            console.log(response)
             dispatch({ type: POST_ERROR, payload: response.data.ErrorMsg })
             dispatch({ type: POST_SUCCES, payload: response.data.msg })
         } catch (error) {
-            console.log(error.response)
             dispatch({ type: CLOSE_LOADING })
 
         }
@@ -44,7 +41,7 @@ const getAllPost = () => {
 }
 
 const getToken = localStorage.getItem('jwt')
-console.log(getToken)
+
 // Post Likes Action
 
 const LikesAction = (_id) => {
@@ -96,9 +93,48 @@ const UnLikeAction = (_id) => {
 }
 
 
+// POST COMMETNT GET ACTION
+
+const GetPostComments = (PostId) => {
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.get(`/Post-Comment/${PostId}`)
+            dispatch({ type: GET_POST_COMMENTS, payload: data.GetCooments })
+        } catch (error) {
+            console.log(error.response)
+        }
+
+    }
+}
+
+// post Comments Action
+
+const PostComment = (PostId ,content) => {
+    return async (dispatch) => {
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${getToken}`,
+            }
+        }
+        try {
+            const { data } = await axios.put(`/Post-Comment/${PostId}`, { content }, config);
+            console.log(data)
+    
+
+        } catch (error) {
+            console.log(error.response)
+         
+        }
+    }
+
+}
+
+
 export {
     CreatePost,
     getAllPost,
     LikesAction,
-    UnLikeAction
+    UnLikeAction,
+    GetPostComments,
+    PostComment
 }
