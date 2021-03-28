@@ -6,6 +6,7 @@ import MainConatiner from "./AdminComponents/AdminContainer/MainConatiner";
 import Private from './PrivateRoutes/Private';
 import UnPrivate from './PrivateRoutes/UnPrivate';
 import PageNotFount from "./Components/PageNotFount/PageNotFount";
+import Comments from "./Components/Comments/Comments";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <UnPrivate exact path="/Login" component={Login} />
         <Route exact path="/admin-dashboard" component={MainConatiner} />
         <Private exact path="/admin-dashboard/create-post" component={CreatePostPage} />
+        <Route  exact path="/post-comments/:PostId" component={Comments}/>
         <Route component={PageNotFount} />
         </Switch>
       </BrowserRouter>
