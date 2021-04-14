@@ -1,0 +1,35 @@
+
+
+.MyPosts_mainContainer{
+    margin-top: 10rem;
+    border: 0.1rem solid gray;
+    width: 100%;
+    height: 40rem;
+    padding: 1rem;
+}
+
+.MyPosts_TableContainer{
+    width: 100%;
+    height: 35rem;
+}
+
+
+.MyPosts_TableContainer table{
+    width: 100%;  
+    border-collapse: collapse;
+}
+
+.MyPosts_TableContainer table, tr, th , td{
+  border: 0.1rem solid #111; 
+}
+.MyPosts_TableContainer  th{
+   height: 3rem; 
+   background-color: rgb(58, 53, 53);
+   color: #fff;
+   font-size: 1.2rem;
+}
+
+.MyPosts_TableContainer  td{
+    text-align: center; 
+    height: 2rem;
+ }

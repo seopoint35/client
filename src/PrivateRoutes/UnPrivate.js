@@ -7,7 +7,7 @@ const UnPrivate = ({ component: Component, ...rest }) => {
         return state.AuthReducer
     })
 
-    const user = userDetails.role
+   
     return (
         <Route
             {...rest}

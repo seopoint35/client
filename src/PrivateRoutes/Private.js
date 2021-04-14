@@ -8,8 +8,8 @@ const Private = ({ component: Component, ...rest }) => {
     const { userDetails } = useSelector((state) => {
         return state.AuthReducer
     })
+ 
 
-    const user = userDetails.role
     return (
         <Route
             {...rest}

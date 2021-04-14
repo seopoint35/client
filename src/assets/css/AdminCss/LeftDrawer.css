@@ -1,0 +1,94 @@
+
+
+.Left_DrawerContainer{
+    width: 30rem;
+    height: 600px;
+    padding: 0.5rem;
+    position: relative;
+    background-color: ghostwhite;
+    box-shadow: -4px 4px 5px -2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -4px 4px 5px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: -4px 4px 5px -2px rgba(0,0,0,0.75);
+}
+
+.Left_Drawer{
+    width: 28rem;
+    height: 100%;
+    position: fixed;
+    
+}
+
+.Drawer_user_detContainer{
+    width: 100%;
+    height: 10rem;
+    border-bottom: 0.1rem solid gray;
+    display: flex;
+    justify-content: center;
+}
+
+.Top_CenterContainer{
+    width: 70%;
+    height: 100%;
+    
+}
+
+.Drawer_InnerImage_Box{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Top_ImageBox{
+    width: 5rem;
+    height: 5rem;
+    border: 0.1rem solid orangered;
+    border-radius: 50%;
+    padding: 0.2rem;
+}
+
+.Top_ImageBox img{
+    width: 100%;
+    height: 100%;
+    border: 0.1rem solid #111;
+    border-radius: 50%;
+}
+
+.Draer_top_UserName{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* DrawerList_Options */
+
+.DrawerList_Options{
+    width: 100%;
+    height: 100%;
+    margin-top: 1rem;
+
+}
+
+.DrawerList_Options a{
+   text-decoration: none;
+   color: gray;
+}
+
+.Drawer_Options{
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.activeLink{
+    background-color: orangered;
+    color: indigo;
+}

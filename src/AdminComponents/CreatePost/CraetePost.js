@@ -4,8 +4,9 @@ import '../../assets/css/AdminCss/CreatePost.css';
 import CardImage from '../../assets/images/modern-login-page-desig.jpg';
 import { useDispatch, useSelector } from 'react-redux';
 import { CreatePost } from '../../Store/Actions/PostAction';
-
-
+import { RESET_POST_SUCESS } from '../../Store/Types/PostType'
+import Snackbar from '@material-ui/core/Snackbar';
+import SnackbarContent from '@material-ui/core/SnackbarContent';
 
 
 
@@ -16,19 +17,21 @@ export default function CraetePost() {
         return state.AuthReducer;
     });
 
-    const { postError, postSucces } = useSelector((state) => {
+    const { postError, postSucces ,loading } = useSelector((state) => {
         return state.PostReducer;
     })
+    const [open, setopen] = useState(false)
 
     const [postData, setpostData] = useState({
         VocabName: "",
-        VocabImage: ""
+        VocabImage: "",
+        Alphabet: ""
     })
 
     const FileInputref = useRef(null)
     const [CurrentImage, setCurrentImage] = useState("")
     const [ImagePreview, setImagePreview] = useState(CardImage);
-    const [FiratLatterCapital, setFiratLatterCapital] = useState("")
+
 
     // input vocab
     const handelChangeVocab = (e) => {
@@ -37,10 +40,11 @@ export default function CraetePost() {
         let SpaceArray = vacbeInput.split(" ");
         let joinArray = SpaceArray.join("")
         let FirstLatter = joinArray.charAt(0).toUpperCase();
-        setFiratLatterCapital(FirstLatter)
+
         setpostData({
             ...postData,
-            VocabName: joinArray
+            VocabName: joinArray,
+            Alphabet: FirstLatter
         })
     };
 
@@ -77,38 +81,56 @@ export default function CraetePost() {
         const formData = new FormData();
         formData.append('VocabName', VocabName)
         formData.append('VocabImage', VocabImage)
+        formData.append('Alphabet', Alphabet)
 
         dispatch(CreatePost(formData, token))
     }
 
     //useEfect for error or succesMessage
     useEffect(() => {
-        const { VocabName, VocabImage } = postData;
-        if (postSucces !== undefined) {
-            toast.success(postSucces);
-         setpostData({
-            VocabName: " "
-         })
-
-         setImagePreview(CardImage)
+        if (postError !== null) {
+            setopen(true)
+            setpostData({
+                VocabName: " "
+            })
         }
-        
-         if(postError !== undefined){
-            toast.error(postError)
+        if (postSucces !== null) {
+            setopen(true)
+            setpostData({
+                VocabName: " "
+            })
         }
-
     }, [postError, postSucces])
 
+    // close snackbar
+    const handleClose = () => {
+        setopen(false)
+    }
 
 
-
-    const { VocabName } = postData;
+    const { VocabName, Alphabet } = postData;
 
     return (
         <>
 
-           <Toaster />
-            
+            {/* error scalton start */}
+            <Snackbar
+                open={open}
+                autoHideDuration={1000}
+                onClose={handleClose}
+                anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            >
+                <SnackbarContent style={{
+                    backgroundColor: '#111',
+                    color: "#fff",
+                    fontSize: "1.3rem"
+                }}
+                    message={<span id="client-snackbar">{(postError == null) ? postSucces : postError} { }</span>}
+                />
+            </Snackbar>
+
+            {/* Error scalton end */}
+
             {/* create post Container Start */}
             <div className="CraetePost-Container">
 
@@ -127,7 +149,8 @@ export default function CraetePost() {
                             <button onClick={handelClick}><i className="fas fa-camera"></i></button>
                         </div>
                         <div className="Create-Meme">
-                            <button onClick={PostSubmitHandel} type="submit">Create</button>
+                            {loading ? "Loading..." :  <button  onClick={PostSubmitHandel} type="submit">Create</button>  }
+                           
                         </div>
                     </div>
                 </form>
@@ -137,7 +160,7 @@ export default function CraetePost() {
             <div className="Show-PostContainer">
                 <div className="Card-Container">
                     <div className="card-header">
-                        <div className="card_header_avtar"> {FiratLatterCapital} </div>
+                        <div className="card_header_avtar"> {Alphabet} </div>
                         <div className="card_header_name">{VocabName}</div>
                     </div>
                     <div className="Card_image">

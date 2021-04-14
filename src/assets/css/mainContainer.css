@@ -1,19 +1,22 @@
 
-
+body{
+    background-color: ghostwhite;
+}
 
 .Main-Conatiner{
-    width: 100%;
-    min-height: 50rem;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
-    display: flex;
-    padding: 0rem 2rem;
-    font-size: 1.6rem;
-    border: 0.1rem solid gainsboro;
+width: 100%;
+min-height: 50rem;
+margin-top: 10rem;
+margin-bottom: 10rem;
+display: flex;
+padding: 0rem 2rem;
+font-size: 1.6rem;
+
 }
 
 .Left-part{
-width: 30rem;   
+width: 30rem; 
+padding: 3rem; 
 }
 
 .center-part{
@@ -25,7 +28,6 @@ width: 40rem;
 
 }
 
-
 .Center-Container{
 padding: 3rem;
 display: flex;
@@ -33,33 +35,111 @@ flex-direction: column;
 align-items: center;
 }
 
+.MobileDrawer_Container{
+display: none;
+}
+
+.Mobile_Fillter_VocabBox{
+display: none
+}
+
+.MobileFillterContainer{
+display: none;
+}
+
+.Hide_MobileFillterContainer{
+display: none;
+}
+
+
 
 
 @media screen and (max-width: 580px) {
    
-    .Main-Conatiner{
-        width: 100%;
-        min-height: 50rem;
-        margin-top: 6rem;
-        display: flex;
-        font-size: 1.6rem;
-        padding: 0%;
-    }
+.Main-Conatiner{
+width: 100%;
+min-height: 50rem;
+margin-top: 5.5rem;
+display: flex;
+font-size: 1.6rem;
+padding: 0%;
+}
 
-    .center-part{
-        width: 100%;
-        padding: 0%;
-    }
-  
-    .Left-part{
-     display: none;
-    }
+.center-part{
+width: 100%;
+padding: 0%;
+}
+
+
+.Left-part{
+display: none;
+}
 
     
-   .Right-part{
-   display: none;
-   }
+.Right-part{
+display: none;
+}
 
-  
+.Center-Container{
+padding: 0.1rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+padding-top: 0rem;
+}
+
+.MobileDrawer_Container{
+display: flex;
+position: fixed;
+left: 0%;
+top: 8.6%;
+z-index: 5;
+height: 100%;
+width: 20rem;
+transition-property: width;
+transition-duration: 0.3s;
+transition-timing-function: ease-in-out;
+    
+}
+
+.Hide_MobileDrawer_Container{
+display: flex;
+position: fixed;
+left: 0%;
+top: 10%;
+z-index: 2;
+height: 100%;
+width: 0rem;
+transition-property: width;
+transition-duration: 0.3s;
+transition-timing-function: ease-in-out;   
+}
+
+.Mobile_Fillter_VocabBox{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 5rem;
+height: 5rem;
+border-radius: 50%;
+position: fixed;
+bottom: 10%;
+right: 5%;
+background-color: orangered;
+color: #fff;
+}
+
+    .MobileFillterContainer{
+    display: block;
+    width: 100%;
+    height: 47rem;
+    position: fixed;
+    background-color: ghostwhite;
+    }
+
+    .Hide_MobileFillterContainer{
+        display: none;
+    }
 
 }

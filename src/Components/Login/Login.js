@@ -4,6 +4,7 @@ import '../../assets/css/Login.css';
 import image1 from '../../assets/images/cycle.jpg';
 import { useDispatch, useSelector } from 'react-redux';
 import { LoginUser } from '../../Store/Actions/AuthActions';
+import GoogleAuth from '../SocalAuths/GoogleAuth';
 
 export default function Login() {
 
@@ -30,18 +31,21 @@ export default function Login() {
     }
 
 
+
     useEffect(() => {
-        if (LoginError.length > 0) {
+        if (LoginError !== null) {
             toast.error(LoginError);
         }
 
+        
 
     }, [LoginError , userDetails])
 
     return (
         <>
 
-            <Toaster />
+             {LoginError &&  <Toaster /> }
+
             <div className="Login-main-Container">
                 <div className="innerContainer">
                     <div className="ImageBox">
@@ -79,7 +83,19 @@ export default function Login() {
                                         <button type="submit">{loading ? "...." : "LOGIN"}</button>
                                     </div>
                                 </form>
+                                 
+                                 <div className="Dekstop_SocalAuth">
+                                     <div className="SocalAuth_Title">
+                                         <p>Login With</p>
+                                     </div>
 
+                                     <div className="SocalAuth_Type">
+                                         <div className="SocalAuthBox">
+                                              <GoogleAuth />
+                                         </div>
+                                      
+                                     </div>
+                                 </div>
                             </div>
 
 

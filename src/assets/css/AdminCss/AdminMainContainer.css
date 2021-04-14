@@ -1,7 +1,6 @@
 
 
 .Admin-MainContainer{
-    border: 0.1rem solid red;
     background-color: rgba(250, 246, 252, 0.83);
     width: 100%;
     min-height: 60rem;
@@ -11,19 +10,17 @@
 
 .Admin-LeftPart{
     width: 30rem;
-    border: 0.1rem solid black;
 
 }
 
 .Admin-CenterPart{
     width: 70rem;
-    border: 0.1rem solid red;
+    border: 0.1rem solid gray;
     padding: 1rem;
     
 }
 
 .Admin-RightPart{
     width: 30rem;
-    border: 0.1rem solid black;
     
 }

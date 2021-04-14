@@ -1,15 +1,13 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import LeftDrawer from './Drawer/LeftDrawer'
+
+
 
 export default function AdminLeftPart() {
     return (
         <>
         <div>
-           <NavLink to={'/admin-dashboard/create-post'} >
-                Create post
-               </NavLink>
-
-               <NavLink to={'/admin-dashboard'}>DashBoard</NavLink>
+        <LeftDrawer />
         </div>
             
         </>

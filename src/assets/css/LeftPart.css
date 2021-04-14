@@ -1,0 +1,104 @@
+
+
+
+.RightFillter_Container{
+    width: 100%;;
+    background-color: #fff;
+    height: 830px;
+}
+
+.RightFillter_HeadingBox{
+    border-bottom: 0.1rem solid gray;
+    padding: 1.2rem;
+}
+
+.RightFillter_searchBox{
+    height: 7rem;
+    padding: 1.2rem 0.8rem 1.2rem 1.2rem;
+  
+}
+
+.SearchInputBox{
+    position: relative;
+    height: 22px;
+    margin-top: 1rem;
+   
+}
+
+.SerachIcon{
+    position: absolute;
+    left: 0%;
+    bottom: 25%;
+    color:blueviolet;
+    pointer-events: none;
+    font-size: 1.3rem;
+
+
+}
+
+.SearchInputBox input[type="text"]{
+    border: none;
+    border-bottom: 0.2rem solid rgb(109, 111, 225);
+    outline: none;
+    width: 100%;
+    padding-left: 12%;
+}
+
+.RightVocab_ListBox{
+    height: 700px;
+    padding: 1.2rem;
+    overflow: auto;
+    display: block;
+}
+
+.Vocab_Item{
+    display: flex;
+    height: 23px;
+    align-items: center;
+    margin-bottom: 0.2rem;
+}
+
+.check_Box{
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}  
+
+
+.Vocab_name{
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: indigo;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 580px) {
+
+    .RightFillter_Container{
+    height: 460px;
+    }
+
+    .RightVocab_ListBox{
+    height: 340px;
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+    .Vocab_Item{
+    width: 6rem;
+    margin: 1rem;
+    }
+
+    .check_Box{
+        
+    }
+
+    .Vocab_name{
+        color: #111;
+    }
+
+}
