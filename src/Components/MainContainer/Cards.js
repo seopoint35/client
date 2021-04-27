@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LikesAction, UnLikeAction } from '../../Store/Actions/PostAction';
 import { NavLink } from 'react-router-dom';
 import { CLOSE_DRAWER } from '../../Store/Types/UtilesType'
+import { Paper } from '@material-ui/core';
 
 export default function Cards(props) {
    const dispatch = useDispatch();
@@ -57,7 +58,7 @@ export default function Cards(props) {
 
    return (
       <>
-         <div className="Card-Container"  >
+         <Paper className="Card-Container"  >
             <div className="card-header">
                <div className="card_header_avtar">{Alphabet}</div>
                <div className="card_header_name">{VocabName}</div>
@@ -92,7 +93,7 @@ export default function Cards(props) {
                   <NavLink to={`/post-comments/${_id}`}>  Add a Comment... </NavLink>
                </div>
             </div>
-         </div>
+         </Paper>
       </>
    )
 }

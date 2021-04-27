@@ -1,0 +1,84 @@
+
+
+.B2B_FillterContainer{
+width: 100%;;
+background-color: #fff;
+height: 830px;
+}
+
+.B2B_fillterHeading{
+border-bottom: 0.1rem solid gray;
+width: 100%;
+height: 6rem;
+display: flex;
+align-items: center;
+padding-left: 2rem;
+font-weight: bold;
+}
+
+.B2B_StateFillter{
+width: 100%;
+min-height: 5.2rem;
+font-size: 1rem;
+}
+
+.B2B_State_MainContainer{
+width: 100%;
+min-height: 10rem;
+}
+
+.B2B_StateList_SearchInput{
+border: 0.1rem solid gray;
+width: 100%;
+height: 3rem;
+position: relative;
+   
+}
+
+.B2B_StateList_SearchInput input[type="text"]{
+width: 100%;
+height: 2.5rem;
+outline: none;
+border: none;
+padding-left: 2.5rem;
+font-size: 1.6rem;
+   
+}
+.B2B_SearchIcon{
+position: absolute;
+top: 10%;
+pointer-events: none;
+}
+
+.B2B_StateList_Container{
+margin-top: 1rem;
+width: 100%;
+}
+
+.B2B_StateCheckListBox{
+    display: flex;
+}
+
+.B2B_StateCheck{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.B2B_SateName{
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 0.3rem;
+}
+
+.B2B_RangeFillter{
+width: 100%;
+height: 6rem;
+padding: 1rem;
+}
+
+.B2BSliderBox{
+width: 100%;
+}

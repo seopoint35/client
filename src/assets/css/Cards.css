@@ -5,9 +5,7 @@ width: 80%;
 height: 38rem;
 padding: 1rem;
 margin-bottom: 5rem;
-box-shadow: 6px 10px 17px 10px rgba(204,176,176,0.19);
--webkit-box-shadow: 6px 10px 17px 10px rgba(204,176,176,0.19);
--moz-box-shadow: 6px 10px 17px 10px rgba(204,176,176,0.19);
+
 }
 
 .card-header{

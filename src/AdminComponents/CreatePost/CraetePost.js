@@ -78,10 +78,13 @@ export default function CraetePost() {
     const PostSubmitHandel = (e) => {
         e.preventDefault();
         const { VocabName, VocabImage } = postData;
+        
         const formData = new FormData();
         formData.append('VocabName', VocabName)
         formData.append('VocabImage', VocabImage)
         formData.append('Alphabet', Alphabet)
+
+        console.log(formData)
 
         dispatch(CreatePost(formData, token))
     }

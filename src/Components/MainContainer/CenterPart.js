@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import Cards from './Cards';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllPost , GetAllComments } from '../../Store/Actions/PostAction';
+import { getAllPost, GetAllComments } from '../../Store/Actions/PostAction';
 import MobileDrawer from '../MobileDrawer/MobileDrawer';
 import FillterVocabs from '../../utlis/FillterVocabs/FillterVocabs';
-import {TOOGLE_MOBILE_FILLTER} from '../../Store/Types/UtilesType'
+import { TOOGLE_MOBILE_FILLTER } from '../../Store/Types/UtilesType'
+import { Fab } from '@material-ui/core';
 
 
 export default function CenterPart() {
@@ -14,7 +15,7 @@ export default function CenterPart() {
     })
 
     // Drawer Reducer
-    const { drawer , MobileFillter } = useSelector((state) => {
+    const { drawer, MobileFillter } = useSelector((state) => {
         return state.UtilesReducer
     })
 
@@ -27,9 +28,9 @@ export default function CenterPart() {
     }, [loading])
 
     // Get All Comments
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(GetAllComments())
-    },[])
+    }, [])
 
     // items.Alphabet.includes(["A" , "B"])
     const fillterPost = allPosts.filter((items) => {
@@ -40,8 +41,8 @@ export default function CenterPart() {
         }
     })
 
-    const ToggleFillterHandel =()=>{
-        dispatch({type : TOOGLE_MOBILE_FILLTER})
+    const ToggleFillterHandel = () => {
+        dispatch({ type: TOOGLE_MOBILE_FILLTER })
     }
 
     return (
@@ -53,15 +54,20 @@ export default function CenterPart() {
 
                 {/* Mobile Fillter BUtton start */}
                 <div className="Mobile_Fillter_VocabBox" onClick={ToggleFillterHandel}>
+                    <Fab
+                    size="medium"
+                     color="secondary" aria-label="add">
                     <p>Fillter</p>
+                    </Fab>
+              
                 </div>
                 {/* Mobile Fillter BUtton End */}
 
                 {/* Mobile Fillter Box start */}
-                 <div className={MobileFillter ?"MobileFillterContainer" : "Hide_MobileFillterContainer" }   >
+                <div className={MobileFillter ? "MobileFillterContainer" : "Hide_MobileFillterContainer"}   >
                     <FillterVocabs />
-                 </div>
-                 {/* Mobile Fillter Box End */}
+                </div>
+                {/* Mobile Fillter Box End */}
 
                 {fillterPost.map((elements, index) => {
                     return (

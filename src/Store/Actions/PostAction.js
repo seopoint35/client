@@ -24,10 +24,12 @@ const CreatePost = (formData, token) => {
                 "Authorization": `Bearer ${token}`,
             }
         }
+        console.log(formData)
         dispatch({ type: OPEN_LOADING })
 
         try {
             const response = await axios.post('/CreatePost', formData, config)
+            console.log(response)
             dispatch({ type: CLOSE_LOADING })
             dispatch({ type: POST_ERROR, payload: response.data.ErrorMsg })
             dispatch({ type: POST_SUCCES, payload: response.data.msg })

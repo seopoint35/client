@@ -9,14 +9,14 @@ min-height: 50rem;
 margin-top: 10rem;
 margin-bottom: 10rem;
 display: flex;
-padding: 0rem 2rem;
+padding: 0rem 0rem;
 font-size: 1.6rem;
 
 }
 
 .Left-part{
 width: 30rem; 
-padding: 3rem; 
+padding: 1rem; 
 }
 
 .center-part{

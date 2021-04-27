@@ -1,26 +1,42 @@
 
 
 .Admin-MainContainer{
-    background-color: rgba(250, 246, 252, 0.83);
-    width: 100%;
-    min-height: 60rem;
-    margin-top: 7rem;
-    display: flex;
+background-color: rgba(250, 246, 252, 0.83);
+width: 100%;
+min-height: 60rem;
+margin-top: 7rem;
+display: flex;
 }
 
 .Admin-LeftPart{
-    width: 30rem;
-
+width: 30rem;
 }
 
 .Admin-CenterPart{
-    width: 70rem;
-    border: 0.1rem solid gray;
-    padding: 1rem;
-    
+width: 70rem;
+border: 0.1rem solid gray;
+padding: 1rem;    
 }
 
 .Admin-RightPart{
-    width: 30rem;
+width: 30rem;
     
+}
+
+@media screen and (max-width: 580px){
+    .Admin-LeftPart{
+      display: none;
+    }
+    .Admin-RightPart{
+      display: none;   
+    }
+
+    .Admin-MainContainer{
+    background-color: rgba(250, 246, 252, 0.83);
+    width: 100%;
+    min-height: 50rem;
+    margin-top: 7rem;
+    display: flex;
+    }
+
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import '../../assets/css/MobileDrawer.css';
 import { useDispatch, useSelector } from 'react-redux';
 import pic from '../../assets/images/girl-1.jpg'
+import { NavLink } from 'react-router-dom';
 
 export default function MobileDrawer() {
 
@@ -45,7 +46,10 @@ export default function MobileDrawer() {
                       <span><i className="fas fa-braille"></i></span>
                        </div>
                         <div className="Feature_TitleBox">
-                            <p>Profile</p>
+                            <NavLink to="/user-dashboard/B2B-Registration">
+                            <p>B2B Registration</p>
+                            </NavLink>
+                            
                         </div>
                     </div>
                     {/* Drawer features box End */}
@@ -56,7 +60,10 @@ export default function MobileDrawer() {
                       <span><i className="fas fa-braille"></i></span>
                        </div>
                         <div className="Feature_TitleBox">
-                            <p>Profile</p>
+                            <NavLink to="/b2b/B2B-all-Posts">
+                            <p>B2B HOME</p>
+                            </NavLink>
+                           
                         </div>
                     </div>
                     {/* Drawer features box End */}

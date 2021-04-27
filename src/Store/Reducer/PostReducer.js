@@ -28,8 +28,6 @@ const initalstate = {
     singlePost: "",
     singlePostSucces: false,
 
-
-
 }
 
 const PostReducer = (state = initalstate, action) => {

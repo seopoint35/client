@@ -1,0 +1,72 @@
+
+
+.B2BCards_mainContainer{
+    margin-top: 1.6rem;
+    width: 100%;
+    height: 15rem;
+    display: flex;
+}
+
+.B2BCardImage_Box{
+    width: 40%;
+}
+
+.B2BCardImage_Box img{
+   width: 100%;
+   height: 100%;
+}
+
+.B2BCard_DetailsBox{
+    width: 60%;
+    font-size: 1.4rem;
+    padding: 0% 2%;
+}
+
+.B2BCard_Breadcrums{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    
+}
+
+.B2B_businesNameBox{
+
+}
+
+.B2B_LocationBox{
+width: 100%;
+height: 3rem;
+display: flex;
+align-items: center;
+}
+
+.B2B_LocationIcon{
+display: flex;
+height: 100%;
+align-items: center;
+justify-content: center;
+margin-right: 3%;
+color: gray;
+}
+
+
+
+
+
+
+
+/* Loading_Conatiner */
+
+.Loading_Conatiner{
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .B2BCard_DetailsBox span{
+    color: red;
+    font-weight: bold;
+} */
