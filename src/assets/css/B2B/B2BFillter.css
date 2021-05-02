@@ -53,6 +53,8 @@ pointer-events: none;
 .B2B_StateList_Container{
 margin-top: 1rem;
 width: 100%;
+height: 16rem;
+overflow-y: auto;
 }
 
 .B2B_StateCheckListBox{
@@ -81,4 +83,13 @@ padding: 1rem;
 
 .B2BSliderBox{
 width: 100%;
+}
+
+
+@media screen and (max-width: 580px) {
+    .B2B_StateList_Container{
+     height: 45rem;
+     overflow-y: auto;
+
+    } 
 }

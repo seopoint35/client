@@ -15,13 +15,11 @@ const UnPrivate = ({ component: Component, ...rest }) => {
                 () => {
 
                     if (userDetails.role == "user" ) {
-                        return <Redirect to={'/admin-dashboard/create-post'} />
+                        return <Redirect to={'/user-dashboard/B2B-Registration'} />
                     } else {
 
                         return <Component />
                     }
-
-
                 }
             }
 

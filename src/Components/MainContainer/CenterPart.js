@@ -33,7 +33,7 @@ export default function CenterPart() {
     }, [])
 
     // items.Alphabet.includes(["A" , "B"])
-    const fillterPost = allPosts.filter((items) => {
+    let fillterPost =  allPosts.filter((items) => {
         if (checkedList.length === 0) {
             return items;
         } else {
@@ -53,11 +53,12 @@ export default function CenterPart() {
                 </div>
 
                 {/* Mobile Fillter BUtton start */}
-                <div className="Mobile_Fillter_VocabBox" onClick={ToggleFillterHandel}>
+                <div className="Mobile_Fillter_VocabBox" >
                     <Fab
-                    size="medium"
+                     onClick={ToggleFillterHandel}
+                      size="medium"
                      color="secondary" aria-label="add">
-                    <p>Fillter</p>
+                       Fillter
                     </Fab>
               
                 </div>
@@ -69,10 +70,12 @@ export default function CenterPart() {
                 </div>
                 {/* Mobile Fillter Box End */}
 
-                {fillterPost.map((elements, index) => {
+                {fillterPost && fillterPost.map((elements, index) => {
                     return (
                         <>
-                            <Cards key={index} AllPost={elements} />
+                            <Cards key={index.toString()} AllPost={elements} />
+
+                           
                         </>
                     )
 

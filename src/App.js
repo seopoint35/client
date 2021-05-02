@@ -17,29 +17,31 @@ import AdminPrivate from './PrivateRoutes/AdminPrivate';
 import UnPrivateAdmin from './PrivateRoutes/UnPrivateAdmin'
 import B2BRegistrationPage from "./B2BComponents/B2BRegistraion/B2BRegistrationPage";
 import B2BHOME from "./B2BComponents/B2BHome/B2BHOME";
-
+import SingUp from "./Components/SingUp/SingUp";
+ 
 function App() {
-  return (
+  return ( 
     <>
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/b2b/B2B-all-Posts" component={B2BHOME} />
           <UnPrivate exact path="/Login" component={Login} />
-          <Route exact path="/admin-dashboard" component={MainConatiner} />
-          <Private exact path="/admin-dashboard/create-post" component={CreatePostPage} />
-          <Private exact path="/admin-dashboard/my-posts" component={MyPostPage} />
-          <Private exact path="/admin-dashboard/my-posts/:PostId" component={MyPostEditPage} />
+          <UnPrivate exact path="/sing-up" component={SingUp} />
           <Route exact path="/post-comments/:PostId" component={Comments} />
 
           {/* B2B Routes start */}
-          <Route exact path="/user-dashboard/B2B-Registration" component={B2BRegistrationPage} />
-          <Route exact path="/b2b/B2B-all-Posts" component={B2BHOME} />
+          <Private exact path="/user-dashboard/B2B-Registration" component={B2BRegistrationPage} />
+         
           {/* B2B Routes End */}
 
           {/* Admin Routes */}
           <UnPrivateAdmin exact path="/admin-Login" roles={['admin']} component={AdminLogin} />
           <AdminPrivate exact path="/admin" roles={['admin', 'super-admin']} component={AdminDashBoard} />
-
+          <AdminPrivate exact path="/admin-dashboard" roles={['admin', 'super-admin']} component={MainConatiner} />
+          <AdminPrivate exact path="/admin-dashboard/create-post" roles={['admin']} component={CreatePostPage} />
+          <AdminPrivate exact path="/admin-dashboard/my-posts"  roles={['admin']} component={MyPostPage} />
+          <AdminPrivate exact path="/admin-dashboard/my-posts/:PostId"  roles={['admin']} component={MyPostEditPage} />
 
           {/* super Admin Routes */}
           <UnPrivateAdmin exact path="/super-admin-Login" roles={['super-admin']} component={SuperAdminLogin} />

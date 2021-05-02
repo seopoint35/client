@@ -3,7 +3,8 @@ import NavBar from '../../Components/NavBar/NavBar';
 import '../../assets/css/AdminCss/AdminMainContainer.css';
 import B2BRegistration from './B2BRegistration';
 import UserLeftPart from '../../UserDashBoard/DashBoardContainer/UserLeftPart';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
 import {GetAllB2BCatogery , GetAllB2BSubCatogery} from '../../Store/B2BActions/B2BAction';
 
 

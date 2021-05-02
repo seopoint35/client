@@ -72,10 +72,3 @@ export default function B2BCard(props) {
 }
 
 
-{/* <p>Business Name <span>{BusinessName}</span></p>  
-            <p>Catogery <span>{Category}</span>  </p>  
-            <p>sub catogery <span>{SubCategory}</span></p>
-            <p>State <span>{state}</span></p>  
-            <p>City <span>{city}</span></p>  
-            <p>Rating <span>{Review.rating}</span>  </p>  
-            <p>Avrage <span>{Review.Avrage}</span></p> */}

@@ -1,20 +1,14 @@
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import NavBar from '../../Components/NavBar/NavBar';
 import '../../assets/css/AdminCss/AdminMainContainer.css'
 import AdminLeftPart from './AdminLeftPart';
 import AdminRightPart from './AdminRightPart';
-import { useSelector } from 'react-redux';
+
 
 export default function MainConatiner() {
-    const { userDetails } = useSelector((state) => {
-        return state.AuthReducer
-    })
+  
 
-    useEffect(() => {
-
-
-    }, [userDetails])
 
     return (
         <>
@@ -27,7 +21,8 @@ export default function MainConatiner() {
                 </div>
 
                 <div className="Admin-CenterPart">
-                    <h1>Center Part</h1>
+                    <h1>This design of the website is in the form of a dummy design only. First I will complete all
+                        the features of the website because it is not yet decided how to present  and for what purpose the user .</h1>
                 </div>
 
                 <div className="Admin-RightPart">

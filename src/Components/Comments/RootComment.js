@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, {  useState } from 'react'
 import '../../assets/css/Comment.css';
 import girl_1 from '../../assets/images/girl-1.jpg'
 import UserCommentReply from './UserCommentReply';
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 
 
 export default function RootComment(props) {

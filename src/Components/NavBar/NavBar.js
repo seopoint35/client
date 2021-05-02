@@ -9,9 +9,9 @@ import {TOOGLE_DRAWER} from '../../Store/Types/UtilesType';
 
 
 export default function NavBar() {
-    const history = useHistory();
+
     const dispatch = useDispatch();
-    const { loading, LoginError, userDetails } = useSelector((state) => {
+    const {  userDetails } = useSelector((state) => {
         return state.AuthReducer
     })
 

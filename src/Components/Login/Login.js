@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
 import '../../assets/css/Login.css';
-import image1 from '../../assets/images/cycle.jpg';
 import { useDispatch, useSelector } from 'react-redux';
 import { LoginUser } from '../../Store/Actions/AuthActions';
 import GoogleAuth from '../SocalAuths/GoogleAuth';
+import { Backdrop, CircularProgress, IconButton, Snackbar } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+
+const useStyles = makeStyles((theme) => ({
+    backdrop: {
+      zIndex: theme.zIndex.drawer + 1,
+      color: '#fff',
+    },
+  }));
+
 
 export default function Login() {
-
+    const classes = useStyles();
+    const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
-    const { loading, LoginError ,userDetails } = useSelector((state) => {
+    const { loading, LoginError, userDetails } = useSelector((state) => {
         return state.AuthReducer
     })
     const [UserLogin, setUserLogin] = useState({
@@ -32,37 +44,65 @@ export default function Login() {
 
 
 
-    useEffect(() => {
-        if (LoginError !== null) {
-            toast.error(LoginError);
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
         }
 
-        
+        setOpen(false);
+    };
 
-    }, [LoginError , userDetails])
+    // Error 
+    useEffect(() => {
+
+        if (LoginError) {
+            setOpen(true);
+        } else {
+            setOpen(false);
+        }
+   
+
+    }, [LoginError])
 
     return (
         <>
 
-             {LoginError &&  <Toaster /> }
+            <Backdrop className={classes.backdrop} open={loading} onClick={handleClose}>
+                <CircularProgress color="inherit" />
+            </Backdrop>
+
+            <Snackbar
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+                open={open}
+                autoHideDuration={6000}
+                message={LoginError}
+
+                action={
+                    <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+                        <CloseIcon fontSize="small" />
+                    </IconButton>
+                }
+
+            />
 
             <div className="Login-main-Container">
                 <div className="innerContainer">
-                    <div className="ImageBox">
-                        <img src={image1} />
-                    </div>
 
                     <div className="formBox">
 
                         <div className="innerFormBox">
                             <div className="formHeading">
-                                <h1>Welcome Back Alexa</h1>
-                                <p>you can use any mode </p>
+                                <h1>User Login</h1>
+
                             </div>
 
                             <div className="mobileFormHeading">
-                                <h1>Welcome Back Alexa</h1>
-                                <p>Sing in to Continue</p>
+                                <h1> User Login</h1>
+
                             </div>
 
                             <div className="formPart">
@@ -83,19 +123,19 @@ export default function Login() {
                                         <button type="submit">{loading ? "...." : "LOGIN"}</button>
                                     </div>
                                 </form>
-                                 
-                                 <div className="Dekstop_SocalAuth">
-                                     <div className="SocalAuth_Title">
-                                         <p>Login With</p>
-                                     </div>
 
-                                     <div className="SocalAuth_Type">
-                                         <div className="SocalAuthBox">
-                                              <GoogleAuth />
-                                         </div>
-                                      
-                                     </div>
-                                 </div>
+                                <div className="Dekstop_SocalAuth">
+                                    <div className="SocalAuth_Title">
+                                        <p>Login With</p>
+                                    </div>
+
+                                    <div className="SocalAuth_Type">
+                                        <div className="SocalAuthBox">
+                                            <GoogleAuth />
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
 
 

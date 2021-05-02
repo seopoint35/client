@@ -10,17 +10,21 @@ import { Route, Redirect } from "react-router-dom";
         return state.AuthReducer
     })
 
+    const checkRole = roles.filter((value)=>{
+        
+        return value == userDetails.role
+
+    })
+
+    console.log(checkRole)
     
-
-    const check = roles.includes(userDetails.role) ;
-
     return (
         <Route
         {...rest}
         render ={
             ()=>{
 
-                if(check ){
+                if(checkRole.includes(userDetails.role) ){
                     return <Component />
                 }else{
                     return <Redirect to={'/admin-Login'} />

@@ -2,12 +2,24 @@ import React, { useEffect, useState } from 'react';
 import image1 from '../../assets/images/cycle.jpg';
 import { useDispatch, useSelector } from 'react-redux';
 import { LoginAdmin } from '../../Store/AdminAction/AdminAuthActions';
+import { makeStyles } from '@material-ui/core/styles';
+import { Backdrop, CircularProgress, IconButton, Snackbar } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
 
-
+const useStyles = makeStyles((theme) => ({
+    backdrop: {
+        zIndex: theme.zIndex.drawer + 1,
+        color: '#fff',
+    },
+}));
 
 export default function AdminLogin() {
+    const classes = useStyles();
     const dispatch = useDispatch();
-
+    const { loading, LoginError, userDetails } = useSelector((state) => {
+        return state.AuthReducer
+    })
+    const [open, setOpen] = useState(false);
     const [adminLogin, setUserLogin] = useState({
         email: "",
         password: ""
@@ -26,33 +38,70 @@ export default function AdminLogin() {
         dispatch(LoginAdmin(adminLogin))
     }
 
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
+
+    // Error 
+    useEffect(() => {
+
+        if (LoginError) {
+            setOpen(true);
+        } else {
+            setOpen(false);
+        }
+
+    }, [LoginError])
+
     return (
         <>
 
+            <Backdrop className={classes.backdrop} open={loading} onClick={handleClose}>
+                <CircularProgress color="inherit" />
+            </Backdrop>
+
+            <Snackbar
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+                open={open}
+                autoHideDuration={6000}
+                message={LoginError}
+
+                action={
+                    <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+                        <CloseIcon fontSize="small" />
+                    </IconButton>
+                }
+
+            />
             <div className="Login-main-Container">
                 <div className="innerContainer">
-                    <div className="ImageBox">
-                        <img src={image1} />
-                    </div>
 
                     <div className="formBox">
 
                         <div className="innerFormBox">
                             <div className="formHeading">
                                 <h1>Admin Login</h1>
-                                <p>you can use any mode </p>
+
                             </div>
 
                             <div className="mobileFormHeading">
-                                <h1>Welcome Back Alexa</h1>
-                                <p>Sing in to Continue</p>
+                                <h1> Admin Login</h1>
+
                             </div>
 
                             <div className="formPart">
 
                                 <form onSubmit={handelSubmit}>
                                     <div className="inputDiv">
-                                        <input name="email"  onChange={handelChange}type="text" required />
+                                        <input name="email" onChange={handelChange} type="text" required />
                                         <label>Email</label>
                                     </div>
 
@@ -63,9 +112,10 @@ export default function AdminLogin() {
 
 
                                     <div>
-                                        <button type="submit">LOGIN</button>
+                                        <button type="submit">Login</button>
                                     </div>
                                 </form>
+
 
                             </div>
 
@@ -74,6 +124,10 @@ export default function AdminLogin() {
                     </div>
                 </div>
             </div>
+
         </>
     )
 }
+
+
+

@@ -1,8 +1,7 @@
 import {
     OPEN_LOADING,
     CLOSE_LOADING,
-    POST_ERROR,
-    POST_SUCCES,
+    POST_MESSAGE,
     RESET_POST_SUCESS,
     GET_ALL_POST,
     GET_POST_COMMENTS,
@@ -11,16 +10,16 @@ import {
     GET_SINGLE_POST_SUCCES,
     RESET_SINGLE_POST_SUCCES,
     ALL_COMMENTS,
-    RESET_POST_COMMENTS
+    RESET_POST_COMMENTS,
 } from '../Types/PostType';
 
 // fillter Reducer
 import {CHECKED_LIST} from '../Types/FillterType';
 
 const initalstate = {
+    test: false,
     loading: false,
-    postError: null,
-    postSucces: null,
+    postMsg: "",
     allPosts: [],
     PostComments: [],
     allComments: [],
@@ -41,24 +40,18 @@ const PostReducer = (state = initalstate, action) => {
             ...state,
             loading: false
         }
-    } else if (action.type === POST_ERROR) {
+    } else if (action.type === POST_MESSAGE) {
         return {
             ...state,
-            postError: action.payload
+            postMsg: action.payload
 
         }
     }else if(action.type === RESET_POST_SUCESS){
         return{
             ...state,
-            postSucces: action.payload
+            postMsg: ""
         }
-    }else if (action.type === POST_SUCCES) {
-
-        return {
-            ...state,
-            postSucces: action.payload
-        }
-    } else if (action.type === GET_ALL_POST) {
+    }else if (action.type === GET_ALL_POST) {
         return {
             ...state,
             allPosts: action.payload

@@ -6,7 +6,6 @@ import { GetPostComments, PostComment } from '../../Store/Actions/PostAction';
 import { useHistory, useParams } from 'react-router';
 import RootComment from './RootComment';
 import { UserCommentReplyAction } from '../../Store/Actions/PostAction';
-import { CLOSE_LOADING } from '../../Store/Types/PostType';
 import Snackbar from '@material-ui/core/Snackbar';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 
@@ -96,12 +95,11 @@ export default function Comments() {
         <>
             <Snackbar
                 open={open}
-                autoHideDuration={1000}
+                autoHideDuration={2000}
                 onClose={handleClose}
                 anchorOrigin={{ vertical: "top", horizontal: "center" }}
             >
                 <SnackbarContent style={{
-                    backgroundColor: ' rgb(250, 31, 31)',
                     color: "#fff",
                     fontSize: "1.6rem"
                 }}
@@ -131,7 +129,7 @@ export default function Comments() {
 
 
 
-
+             <div className="Comment_mainContainer">
             <div className="Comment_Container">
 
                 <div className="Dekstop_image">
@@ -201,7 +199,7 @@ export default function Comments() {
 
 
             </div>
-
+            </div>
 
 
         </>

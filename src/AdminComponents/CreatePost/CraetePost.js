@@ -1,23 +1,33 @@
 import React, { useEffect, useRef, useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
 import '../../assets/css/AdminCss/CreatePost.css';
 import CardImage from '../../assets/images/modern-login-page-desig.jpg';
 import { useDispatch, useSelector } from 'react-redux';
 import { CreatePost } from '../../Store/Actions/PostAction';
-import { RESET_POST_SUCESS } from '../../Store/Types/PostType'
-import Snackbar from '@material-ui/core/Snackbar';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
+import { RESET_POST_SUCESS } from '../../Store/Types/PostType';
+import { Backdrop, CircularProgress, IconButton, Snackbar } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+
+const useStyles = makeStyles((theme) => ({
+    backdrop: {
+      zIndex: theme.zIndex.drawer + 1,
+      color: '#fff',
+    },
+  }));
 
 
 
 export default function CraetePost() {
+    const classes = useStyles();
     const dispatch = useDispatch();
     //get the token from state
     const { token } = useSelector((state) => {
         return state.AuthReducer;
     });
 
-    const { postError, postSucces ,loading } = useSelector((state) => {
+    const { loading ,postMsg } = useSelector((state) => {
         return state.PostReducer;
     })
     const [open, setopen] = useState(false)
@@ -91,19 +101,14 @@ export default function CraetePost() {
 
     //useEfect for error or succesMessage
     useEffect(() => {
-        if (postError !== null) {
+        if (postMsg) {
             setopen(true)
             setpostData({
                 VocabName: " "
             })
         }
-        if (postSucces !== null) {
-            setopen(true)
-            setpostData({
-                VocabName: " "
-            })
-        }
-    }, [postError, postSucces])
+      
+    }, [postMsg , loading])
 
     // close snackbar
     const handleClose = () => {
@@ -117,21 +122,26 @@ export default function CraetePost() {
         <>
 
             {/* error scalton start */}
-            <Snackbar
-                open={open}
-                autoHideDuration={1000}
-                onClose={handleClose}
-                anchorOrigin={{ vertical: "top", horizontal: "center" }}
-            >
-                <SnackbarContent style={{
-                    backgroundColor: '#111',
-                    color: "#fff",
-                    fontSize: "1.3rem"
-                }}
-                    message={<span id="client-snackbar">{(postError == null) ? postSucces : postError} { }</span>}
-                />
-            </Snackbar>
+            <Backdrop className={classes.backdrop} open={loading} onClick={handleClose}>
+                <CircularProgress color="inherit" />
+            </Backdrop>
 
+            <Snackbar
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+                open={open}
+                autoHideDuration={6000}
+                message={postMsg}
+
+                action={
+                    <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+                        <CloseIcon fontSize="small" />
+                    </IconButton>
+                }
+
+            />
             {/* Error scalton end */}
 
             {/* create post Container Start */}

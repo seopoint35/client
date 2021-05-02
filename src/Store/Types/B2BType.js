@@ -1,2 +1,5 @@
+export const CLOSE_LOADING = "CLOSE_LOADING";
+export const OPEN_LOADING = "OPEN_LOADING";
 export const GET_B2B_CATEGORY = "GET_B2B_CATEGORY";
 export const GET_B2B_SUB_CATOGERY = "GET_B2B_SUB_CATOGERY";
+export const B2B_MESSAGE = "B2B_MESSAGE";

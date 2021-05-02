@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import girl_4 from '../../assets/images/girl-4.jpg';
 import { useDispatch, useSelector } from 'react-redux';
-import { UserCommentReplyAction } from '../../Store/Actions/PostAction'
-import { useParams } from 'react-router';
 
 export default function UserCommentReply(props) {
     const { ViewsReplyTogel,  CommentID } = props;

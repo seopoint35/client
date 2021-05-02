@@ -30,6 +30,9 @@ if (userDetail) {
 }
 
 
+
+
+
 const AuthReducer = (state = initalState, action) => {
 
     if (action.type === OPEN_LOADING) {

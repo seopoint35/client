@@ -1,8 +1,7 @@
 import {
     OPEN_LOADING,
     CLOSE_LOADING,
-    POST_ERROR,
-    POST_SUCCES,
+    POST_MESSAGE,
     GET_ALL_POST,
     GET_POST_COMMENTS,
     GET_MY_POSTS,
@@ -31,11 +30,12 @@ const CreatePost = (formData, token) => {
             const response = await axios.post('/CreatePost', formData, config)
             console.log(response)
             dispatch({ type: CLOSE_LOADING })
-            dispatch({ type: POST_ERROR, payload: response.data.ErrorMsg })
-            dispatch({ type: POST_SUCCES, payload: response.data.msg })
+           
+            dispatch({ type: POST_MESSAGE, payload: response.data.msg })
         } catch (error) {
+            dispatch({ type: POST_MESSAGE, payload: error.response.data.ErrorMsg })
             dispatch({ type: CLOSE_LOADING })
-
+            console.log(error.response)
         }
     }
 }
@@ -60,22 +60,23 @@ const getAllPost = () => {
 const LikesAction = (_id) => {
 
     return async (dispatch) => {
-
         const config = {
             headers: {
                 "Authorization": `Bearer ${getToken}`,
+                "Content-Type": "application/json",
             }
         }
         dispatch({ type: OPEN_LOADING })
-        try {
-            console.log('like action fire')
-            console.log(_id)
-            const { data } = await axios.put('/Post-Likes', { _id }, config)
-            console.log(data)
+        try{
+            const  response  = await axios.put('/Post-Likes', { _id }, config)
+            console.log("ok")
             dispatch({ type: CLOSE_LOADING })
-        } catch (error) {
-            console.log(error)
+        }catch (error) {
+            console.log(error.response)
+            console.log(error.response.data.msg)
+            console.log("error")
             dispatch({ type: CLOSE_LOADING })
+            dispatch({ type: POST_MESSAGE, payload: error.response.data.msg })
         }
     }
 

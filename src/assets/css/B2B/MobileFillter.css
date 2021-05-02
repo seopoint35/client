@@ -1,0 +1,66 @@
+
+
+.FillterTab_MainContainer{
+width: 100%;
+height: 70rem;
+display: flex;
+}
+
+.B2BFillter_OptionsBox{
+border: 00.1rem solid gray;
+width: 40%;
+padding: 1rem;
+background-color: gainsboro;
+   
+}
+
+.B2BMobileDrawer{
+display: none;
+}
+
+.center-part .MobileFillterDrawer{
+border: 0.1rem solid red;
+display: none;
+}
+
+.B2BMobileFillter_fetures{
+border: 0.1rem solid gray;
+width: 100%;
+padding: 1rem;
+border: 0.1rem solid red;
+position: relative;
+}
+
+.B2B_Mobile_ExitFillter{
+position: fixed;
+bottom: 1%;
+right: 1%;
+
+}
+
+.B2B_Mobile_AvrageRating{
+
+}
+
+.B2B_Mobile_FeatureHeading{
+ width: 100%;
+ height: 5rem;
+  
+}
+
+.B2B_Mobile_SliderBox{
+    padding: 1rem;
+}
+
+.B2B_Mobile_StateFillterContainer{
+    width: 100%;
+}
+
+.Mobile_SateFillter_Heading{
+    margin-bottom: 1rem;
+}
+
+.B2B_Drawer_SateContainer{
+ 
+   
+}

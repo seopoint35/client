@@ -12,9 +12,9 @@ export default function FillterVocabs() {
     const Data = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "o", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
     const dispatch = useDispatch();
-    const { checkedList } = useSelector((state) => {
-        return state.fillterReducer
-    })
+    // const { checkedList } = useSelector((state) => {
+    //     return state.fillterReducer
+    // })
     const [Search, setSearch] = useState("")
     const [Checked, setChecked] = useState([])
 
@@ -32,12 +32,12 @@ export default function FillterVocabs() {
         console.log("i", i)
         const currentIndex = Checked.indexOf(value); // Result come -1 or true
         let newChecked = [...Checked]
-        if (currentIndex == -1) {
+        if (currentIndex === -1) {
             newChecked.push(value)
             console.log('add', newChecked)
         } else {
             newChecked = newChecked.filter((element) => {
-                return element != value
+                return element !== value
             })
             console.log('remove', newChecked)
         }
@@ -61,7 +61,7 @@ export default function FillterVocabs() {
                 <div className="RightFillter_searchBox">
                     <h5>Vocab </h5>
                     <div className="SearchInputBox">
-                        <input type="text" maxlength="1" onChange={handelSearchInput} />
+                        <input type="text" maxLength="1" onChange={handelSearchInput} />
                         <div className="SerachIcon">
                             <span><i className="fas fa-search"></i></span>
                         </div>
@@ -76,19 +76,16 @@ export default function FillterVocabs() {
                         return (
                             <>
                                 {/* Vocab List Item start */}
-                                <div key={index} className="Vocab_Item">
+                                <div key={index.toFixed()}  className="Vocab_Item">
                                     <div className="check_Box">
                                         <Checkbox
                                             size="medium"
                                             checked={Checked.indexOf(element) === -1 ? false : true}
                                             onChange={() => handelTogelCheck(element, index)}
                                         />
-                                        {/* <input type="checkbox"
-                                            
-                                            checked={Checked.indexOf(element) === -1 ? false : true}
-                                            onChange={() => handelTogelCheck(element, index )} /> */}
+                                        
                                     </div>
-                                    <div className="Vocab_name">
+                                    <div  className="Vocab_name">
                                         <p>{element}</p>
                                     </div>
                                 </div>

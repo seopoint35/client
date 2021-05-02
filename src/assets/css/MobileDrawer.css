@@ -1,28 +1,20 @@
 
 
-.Mobile_Drawer_InnerContainer{
-display: block;
-width: 100%;
-background-color: #fff;
-transition-property: width;
-transition-duration: 0.3s;
-transition-timing-function: ease-in-out;
-transition-delay: 5s;
+ /* material ui drawer */
 
+.MobileDrawer{
+width: 20rem;
+margin-top: 3rem;
+font-size: 1.6rem;
 }
 
 
-.Hide_Mobile_Drawer_InnerContainer{
-display: none;
-transition-property: width;
-transition-duration: 0.3s;
-transition-timing-function: ease-in-out;
-}
 
 .Drawer_user_Det{
 width: 100%;
 padding-bottom: 0.2rem;
-border-bottom: 0.1rem solid orangered;
+border-bottom: 0.1rem solid gray;
+margin-bottom: 1rem;
 }
 
 .Drawer_UserImage{
@@ -59,10 +51,11 @@ min-height: 30rem;
 }
 
 .Drawer_featureBox{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 3rem;
+display: flex;
+align-items: center;
+width: 100%;
+height: 3rem;
+
 }
 
 .Drawer_featureBox:hover{
@@ -77,27 +70,35 @@ background-color: #111;
  display: flex;
  justify-content: center;
  align-items: center;
+
 }
 
 .Drawer_featureBox .Feature_TitleBox{
  height: 100%;
  display: flex;
- align-items: center;
+ align-items: baseline;
  width: 70%;
+ font-size: 1.6rem;
  }
 
- .Drawe_PolicyContiner{
-     margin-top: 1rem;
-     width: 100%;
-     min-height: 10rem;
- }
 
- .Pravcy_optionBox{
-     display: flex;
-     align-items: center;
-     padding-left: 1rem;
-     width: 100%;
-     height: 3rem;
-     
- }
+ 
+.Drawer_featureBox .Feature_TitleBox a{
+color: gray;
+}
+.Drawe_PolicyContiner{
+margin-top: 1rem;
+width: 100%;
+min-height: 10rem;
+}
+
+.Pravcy_optionBox{
+display: flex;
+align-items: center;
+padding-left: 1rem;
+width: 100%;
+height: 3rem; 
+font-size: 1.6rem;    
+}
+
 

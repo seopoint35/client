@@ -2,7 +2,7 @@
 
 .Card-Container{
 width: 80%;
-height: 38rem;
+height: 40rem;
 padding: 1rem;
 margin-bottom: 5rem;
 
@@ -10,8 +10,8 @@ margin-bottom: 5rem;
 
 .card-header{
 display: flex;
-margin-bottom: 2rem;
 align-items: center;
+background-color: #fff;
 }
 
 .card_header_avtar{

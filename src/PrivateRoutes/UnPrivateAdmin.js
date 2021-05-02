@@ -9,7 +9,13 @@ const UnPrivateAdmin = ({ component: Component, roles, ...rest }) => {
     })
 
      
-      let check = roles.includes(userDetails.role);
+    const checkRole = roles.filter((value)=>{
+        
+        return value == userDetails.role
+
+    })
+
+    console.log(checkRole)
     
 
     return (
@@ -18,8 +24,8 @@ const UnPrivateAdmin = ({ component: Component, roles, ...rest }) => {
             render={
                 () => {
 
-                    if (check) {
-                        return <Redirect to={'/admin'} />
+                    if (checkRole.includes(userDetails.role) ) {
+                        return <Redirect to={'/admin-dashboard'} />
                     } else {
                         return <Component />
                     }

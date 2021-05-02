@@ -11,12 +11,18 @@ box-sizing: border-box;
 }
 
 /* comment Conatiner Dekstop */
+
+.Comment_mainContainer{
+    height: 100vh;
+    background-color: rgb(48, 47, 47);
+}
+
 .Comment_Container{
 background-color: rgb(48, 47, 47);
 display: flex;
 padding: 3rem;
 width: 100%;
-height: 100%;
+height: 80%;
    
 }
 
@@ -323,6 +329,10 @@ color: rgb(250, 31, 31);
     .DekstopList-container{
     min-height: 60rem;
     border: none;
+    }
+
+    .Comment_mainContainer{
+       background-color: #fff;
     }
 
     .Comment_Container{

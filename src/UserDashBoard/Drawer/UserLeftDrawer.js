@@ -31,22 +31,13 @@ export default function UserLeftDrawer() {
                 <div className="DrawerList_Options">
                      
                       {/* opetins list start */}
-                      <NavLink exact   to='/admin-dashboard'  activeStyle={{color: "red"}} >
-                      <div className="Drawer_Options">
-                           <h2>Dash Board</h2>
-                       </div>
-                       </NavLink>
+                    
                        <NavLink exact  to='/admin-dashboard/create-post'  activeStyle={{color: "red"}} > 
                        <div className="Drawer_Options">
                            <h2>B2B Registration</h2>
                        </div>
                        </NavLink>
 
-                       <NavLink exact  to='/admin-dashboard/my-posts'  activeStyle={{color: "red"}} > 
-                       <div className="Drawer_Options">
-                           <h2>My posts</h2>
-                       </div>
-                       </NavLink>
                       {/* opetins list End */}
 
                 </div>
